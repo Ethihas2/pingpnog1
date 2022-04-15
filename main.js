@@ -26,7 +26,8 @@ function setup(){
   var canvas =  createCanvas(700,600);
   canvas.parent('canvas_div')
   video = createCapture(VIDEO)
-  video.size(600,500)
+  video.size(700,600)
+  video.hide();
 
   poseNet = ml5.poseNet(video,modelLoaded);
   poseNet.on('pose',gotPoses)
@@ -46,7 +47,7 @@ function gotPoses(results){
 
 
 function draw(){
-
+  image(video,0,0,700,600)
 
  background(0); 
 
